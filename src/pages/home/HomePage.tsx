@@ -1,28 +1,18 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import products from '../../products';
+import { ProductType } from '../../db-data/config';
+import Product from '../../components/product/Product';
+import products from '../../db-data/products';
 
-interface Product {
-  _id: string;
-  name: string;
-  image: string;
-  description: string;
-  brand: string;
-  category: string;
-  price: number;
-  countInStock: number;
-  rating: number;
-  numReviews: number;
-}
-
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div>
       <>
         <h1>Latest Products</h1>
         <Row>
-          {products.map((product: Product) => (
+          {products.map((product: ProductType) => (
             <Col sm={12} md={6} lg={4} xl={3}>
+              <Product product={product} />
               <h3>{product.name}</h3>
             </Col>
           ))}
