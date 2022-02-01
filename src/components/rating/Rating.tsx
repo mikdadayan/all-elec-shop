@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Rating: React.FC<{ value: number; text: string; color: string }> = ({
   value,

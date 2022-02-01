@@ -2,19 +2,25 @@ import React, { FC } from 'react';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import { Container } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
+import ProductPage from './pages/product/ProductPage';
 
 const App: FC = () => {
   return (
     <>
-      <Header />
-      <main className='py-3'>
-        <Container>
-          <h1>Welcome to the All Electronics Shop</h1>
-          <HomePage />
-        </Container>
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <main className='py-3'>
+          <Container>
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/product/:id' element={<ProductPage />} />
+            </Routes>
+          </Container>
+        </main>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 };
