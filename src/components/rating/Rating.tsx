@@ -67,7 +67,7 @@ const Rating: React.FC<{ value: number; text: string; color: string }> = ({
           }
         ></i>
       </span>
-      <span>{text && text}</span>
+      <span> {text && text}</span>
     </div>
   );
 };
