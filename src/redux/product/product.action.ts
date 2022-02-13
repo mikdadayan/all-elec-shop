@@ -11,7 +11,7 @@ export const listProducts = () => async (dispatch: any) => {
     const data = (await axios.get('/api/products')).data as ProductType[];
 
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
-  } catch (error) {
+  } catch (error: any) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
       payload:
