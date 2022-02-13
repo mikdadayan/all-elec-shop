@@ -4,6 +4,8 @@ import { Row, Col } from 'react-bootstrap';
 import { ProductType } from '../../db-data/config';
 import Product from '../../components/product/Product';
 import { listProducts } from '../../redux/product/product.action';
+import Loader from '../../components/loader/Loader';
+import Message from '../../components/message/Message';
 
 interface ProductList {
   products: ProductType[];
@@ -26,9 +28,9 @@ const HomePage: React.FC = () => {
     <>
       <h1>Latest Products</h1>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {products.map((product: ProductType) => (
