@@ -1,6 +1,5 @@
 import { AnyAction } from 'redux';
 import ProductActionTypes from './product.types';
-import { ProductType } from '../../db-data/config';
 
 const {
   PRODUCT_LIST_REQUEST,
@@ -11,11 +10,7 @@ const {
   PRODUCT_DETAILS_FAIL,
 } = ProductActionTypes;
 
-const INITAL_STATE: {
-  products: ProductType[];
-  loading: boolean;
-  error: string;
-} = {
+const INITAL_STATE = {
   products: [],
   loading: false,
   error: '',

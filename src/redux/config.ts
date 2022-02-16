@@ -11,7 +11,11 @@ export interface ProductList {
   error: string;
 }
 
+interface Cart {
+  cartItems: CartProductType[];
+}
+
 export interface RootState {
   productList: ProductList;
-  cart: CartProductType[];
+  cart: Cart;
 }

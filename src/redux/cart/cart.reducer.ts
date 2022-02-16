@@ -1,7 +1,7 @@
 import CartActionTypes from './cart.types';
 import { AnyAction } from 'redux';
 import { CartProductType } from '../config';
-const { CART_ADD_ITEM } = CartActionTypes;
+const { CART_ADD_ITEM, CART_REMOVE_ITEM } = CartActionTypes;
 
 const INITAL_STATE: {
   cartItems: CartProductType[];
