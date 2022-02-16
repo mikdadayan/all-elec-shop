@@ -2,19 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import { ProductType } from '../../db-data/config';
+import { RootState } from '../../redux/config';
 import Product from '../../components/product/Product';
 import { listProducts } from '../../redux/product/product.action';
 import Loader from '../../components/loader/Loader';
 import Message from '../../components/message/Message';
-
-interface ProductList {
-  products: ProductType[];
-  loading: boolean;
-  error: string;
-}
-interface RootState {
-  productList: ProductList;
-}
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch();

@@ -1,16 +1,15 @@
 import CartActionTypes from './cart.types';
 import { AnyAction } from 'redux';
-
-import { ProductType } from '../../db-data/config';
-
-interface CartProductType extends ProductType {
-  qty: number;
-  product: string;
-}
-
+import { CartProductType } from '../config';
 const { CART_ADD_ITEM } = CartActionTypes;
 
-export const cartReducer = (state: { cartItems: [] }, action: AnyAction) => {
+const INITAL_STATE: {
+  cartItems: CartProductType[];
+} = {
+  cartItems: [],
+};
+
+export const cartReducer = (state = INITAL_STATE, action: AnyAction) => {
   switch (action.type) {
     case CART_ADD_ITEM:
       const item = action.payload;
@@ -32,6 +31,6 @@ export const cartReducer = (state: { cartItems: [] }, action: AnyAction) => {
         return { ...state, cartItems: [...state.cartItems, item] };
       }
     default:
-      break;
+      return { ...state };
   }
 };
